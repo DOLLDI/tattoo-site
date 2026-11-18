@@ -1,0 +1,8 @@
+{
+  "name": "NOCTURNE ATELIER — Tattoo Studio",
+  "description": "Кинематографическая scroll-презентация и интерактивная 3D-студия татуировки премиум-класса.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", system-ui, -apple-system, sans-serif;
+  --color-obsidian: #050506;
+  --color-graphite: #0b0b0d;
+  --color-charcoal: #141417;
+  --color-steel: #8a8d94;
+  --color-titanium: #c8cdd4;
+  --color-frost: #f4f4f6;
+}
+
+@layer base {
+  html {
+    background-color: #050506;
+    color: #f4f4f6;
+    font-family: var(--font-sans);
+    color-scheme: dark;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #050506;
+    color: #f4f4f6;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Custom subtle dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050506;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272c;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #44444d;
+  }
+}
+
+/* Liquid metal conic border & ink morph animations */
+@keyframes liquid-metal-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes morph-word-rotate {
+  0% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translate(-50%, -50%) scale(0.86);
+  }
+  8% {
+    opacity: 0.55;
+    filter: blur(8px);
+  }
+  18%, 36% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  46% {
+    opacity: 0.55;
+    filter: blur(8px);
+  }
+  52%, 100% {
+    opacity: 0;
+    filter: blur(18px);
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+/* Reduced motion safeguard */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
